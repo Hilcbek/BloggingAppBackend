@@ -75,6 +75,14 @@ export let RelatedBlogs = async (req,res,next) => {
         next(error)
     }
 }
+export let DeletePost = async (req,res,next) => {
+    try {
+        await Blog.findByIdAndDelete(req.params.id);
+        res.status(200).json({ data : 'deleted!'})
+    } catch (error) {
+        
+    }
+}
 export let EditPost = async (req,res,next) => {
     try {
         let UpdatedPost = await Blog.findByIdAndUpdate(req.params.id,{
