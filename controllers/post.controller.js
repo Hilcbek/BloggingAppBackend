@@ -44,7 +44,7 @@ export let QuerySearch = async (req,res,next) => {
         if(title){
             Blogs = await Blog.find({ title : title })
         }
-        res.status(200).json({ data : Blogs})
+        res.status(200).json({ data : Blogs}).populate('author').populate('tag')
     } catch (error) {
         next(error)
     }
