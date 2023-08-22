@@ -14,7 +14,7 @@ app.use(express.json())
 app.use(helmet())
 helmet.crossOriginResourcePolicy({ policy : 'same-site'})
 app.use(morgan('common'))
-app.use(cors({ origin : 'https://blogging-app-front-end-cgse.vercel.app', credentials : true }))
+app.use(cors({ origin : 'https://blogging-app-front-end-zqu5.vercel.app', credentials : true }))
 app.use(cookieParser())
 let MONGODB = process.env.MONGODB
 let PORT = process.env.PORT
@@ -29,3 +29,4 @@ app.use((err,req,res,next) => {
     let errorStatus = err.status || 500
     res.status(errorStatus).json({ error : errorMessage})
 })
+//https://blogging-app-front-end-cgse.vercel.app/
