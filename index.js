@@ -29,4 +29,3 @@ app.use((err,req,res,next) => {
     let errorStatus = err.status || 500
     res.status(errorStatus).json({ error : errorMessage})
 })
-//https://blogging-app-front-end-cgse.vercel.app/
